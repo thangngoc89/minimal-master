@@ -20,7 +20,7 @@ function minimal_custom_scripts() {
 	wp_enqueue_script( 'minimal-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
 
 	//* KN's custom enqueue
-	wp_enqueue_script( 'toggle-search', get_stylesheet_directory_uri() . '/js/toggle-search.js', array( 'jquery' ), '1.0.0' );
+	// wp_enqueue_script( 'toggle-search', get_stylesheet_directory_uri() . '/js/toggle-search.js', array( 'jquery' ), '1.0.0' );
 	wp_enqueue_style( 'kn-styles', get_stylesheet_directory_uri() . '/kn-styles.css');
 
 }
