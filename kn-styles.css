@@ -1,11 +1,33 @@
+/* Initial */
+/*.hide {
+  display: none;
+}
+.active{
+  display: block;
+}*/
+
+/* Adjust header -- Make it smaller */
+/*.site-header .wrap {
+    padding: 40px 0 10px 0;
+}
+
+.site-header .widget-area {
+  padding: 0;
+}
+
+.top-widget {
+  padding: 0;
+}*/
+
 /* Newest Books*/
-.widget_recent_entries {
+.widget {
   background: #fff;
 	color: #111;
 	padding: 40px;
 	margin-bottom: 40px;
 	border-radius: 3px;
 }
+
 .share-before:after, .share-after:after {
   display: inline;
 }
@@ -84,4 +106,77 @@
 		float: none;
 	}
 
+}
+
+/* Search */
+/*
+toggle Search
+---------------------------------------------------------------------------------------------------- */
+
+.hide { display: none;}
+
+li.toggle-search a,
+.site-header.dark li.toggle-search a{
+  font-size: 0;
+  padding: 0;
+  position: relative;
+  width: 40px;
+}
+
+li.toggle-search a:before{
+  content: "\f179";
+  display: block;
+  font-family: "Dashicons";
+  font-size: 26px;
+  left: 10px;
+  position: absolute;
+  top: -16px;
+  vertical-align: middle;
+  width: 33px;
+}
+
+li.toggle-search.active a:before{
+  content: "\f335";
+}
+
+.search-wrap {
+  clear: both;
+  margin: 0 5px 30px 5px;
+  padding: 0 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.search-wrap .search-form input[type="search"]{
+  padding: 10px 20px 8px;
+  /*border-radius: 5px;*/
+}
+
+/* Simple social icon */
+.simple-social-icons {
+  float: right;
+}
+
+/* Subscribe box */
+.sidebar-primary .enews-widget {
+  background-color: #f7595a;
+  color: #fff;
+}
+.sidebar-primary .enews-widget h4 {
+  color: #fff;
+}
+.sidebar-primary .enews-widget input {
+	width: 69%;
+}
+
+.sidebar-primary .enews-widget input[type="submit"] {
+	width: 29%;
+  padding: 17px 4px;
+  color: #f7595a;
+  font-weight: 700;
+  background-color: #fff;
+}
+.sidebar-primary .enews-widget input[type="submit"]:hover {
+  color: #fff;
+  background-color: #96595A;
 }

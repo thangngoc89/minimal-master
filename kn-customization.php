@@ -122,4 +122,27 @@ function include_books_in_home( $query ) {
   }
 }
 
+// Add books to feed
+function myfeed_request($qv) {
+	if (isset($qv['feed']) && !isset($qv['post_type']))
+		$qv['post_type'] = array('post', 'books');
+	return $qv;
+}
+add_filter('request', 'myfeed_request');
+
 // yarpp_related(array( 'post_type' => array('books')));
+// add_filter( 'kn_books_post_type', 'kn_books_post_type');
+// function kn_books_post_type( $args ) {
+// 	$arg['yarpp_support'] = true;
+// 	return $args;
+// }
+
+//* Adding search form
+add_action('genesis_before_content', 'parallax_toggle_search');
+function parallax_toggle_search(){
+  echo '<div class="search-wrap" id="toggle-search">' . "\n";
+
+  echo get_search_form();
+
+  echo '</div>' . "\n";
+}
