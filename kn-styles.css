@@ -1,13 +1,13 @@
 /* Initial */
-/*.hide {
+.hide {
   display: none;
 }
 .active{
   display: block;
-}*/
+}
 
 /* Adjust header -- Make it smaller */
-/*.site-header .wrap {
+.site-header .wrap {
     padding: 40px 0 10px 0;
 }
 
@@ -17,10 +17,10 @@
 
 .top-widget {
   padding: 0;
-}*/
+}
 
 /* Newest Books*/
-.widget {
+.sidebar-primary .widget {
   background: #fff;
 	color: #111;
 	padding: 40px;
