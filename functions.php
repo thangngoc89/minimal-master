@@ -17,8 +17,11 @@ add_action( 'wp_enqueue_scripts', 'minimal_custom_scripts' );
 function minimal_custom_scripts() {
 	wp_enqueue_style( 'minimal-custom-fonts', '//fonts.googleapis.com/css?family=Open+Sans|Leckerli+One|Source+Sans+Pro:300,400', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'dashicons' );
-	wp_enqueue_style( 'kn-styles', get_stylesheet_directory_uri() . '/kn-styles.css');
 	wp_enqueue_script( 'minimal-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true );
+
+	//* KN's custom enqueue
+	wp_enqueue_script( 'toggle-search', get_stylesheet_directory_uri() . '/js/toggle-search.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_style( 'kn-styles', get_stylesheet_directory_uri() . '/kn-styles.css');
 
 }
 
@@ -238,3 +241,52 @@ genesis_register_sidebar( array(
 	'name'        => __( 'After Entry Widget', 'minimal' ),
 	'description' => __( 'This is the widget that appears after the entry on single posts.', 'minimal' ),
 ) );
+
+//* Add menu to genesis
+// Register and Hook Top Navigation Menu
+add_action('genesis_before_header', 'sample_before_header_menu', 10);
+	function sample_before_header_menu() {
+
+	register_nav_menu( 'top', 'Top Navigation Menu' );
+
+	genesis_nav_menu( array(
+		'theme_location' => 'top',
+		'menu_class'     => 'menu genesis-nav-menu menu-top',
+	) );
+}
+
+// Register and Hook Footer Navigation Menu
+add_action('genesis_before_footer', 'sample_footer_menu', 10);
+	function sample_footer_menu() {
+
+	register_nav_menu( 'footer', 'Footer Navigation Menu' );
+
+	genesis_nav_menu( array(
+		'theme_location' => 'footer',
+		'menu_class'     => 'menu genesis-nav-menu menu-footer',
+	) );
+}
+
+// Add Theme Support for Genesis Menus
+add_theme_support( 'genesis-menus', array(
+	'primary'   => __( 'Primary Navigation Menu', 'genesis' ),
+	'secondary' => __( 'Secondary Navigation Menu', 'genesis' ),
+	'top'       => __( 'Top Navigation Menu', 'genesis' ),
+	'footer'    => __( 'Footer Navigation Menu', 'genesis' ),
+) );
+
+// Add Structural Wraps
+add_theme_support( 'genesis-structural-wraps', array(
+	'menu-top',
+	'menu-footer',
+	'header',
+	'nav',
+	'subnav',
+	'site-inner',
+	'footer-widgets',
+	'footer'
+) );
+
+// Add Attributes for Navigation Elements
+add_filter( 'genesis_attr_nav-top', 'genesis_attributes_nav' );
+add_filter( 'genesis_attr_nav-footer', 'genesis_attributes_nav' );
