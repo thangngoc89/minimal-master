@@ -70,10 +70,11 @@ function kn_expand_quick_edit_link($actions, $post) {
     if (($current_screen->post_type != 'books'))
         return $actions;
     $nonce = wp_create_nonce( 'book_download_link_'.$post->ID);
-    $myfielvalue = get_post_meta( $post->ID, 'book_download_link', TRUE);
+    $myfieldvalue = get_post_meta( $post->ID, 'book_download_link', TRUE);
+    $myfieldvalue = base64_encode($myfieldvalue);
     $actions['inline hide-if-no-js'] = '<a href="#" class="editinline" title="';
     $actions['inline hide-if-no-js'] .= esc_attr( __( 'Edit this item inline' ) ) . '"';
-    $actions['inline hide-if-no-js'] .= " onclick=\"set_book_download_link_value('{$myfielvalue}')\" >";
+    $actions['inline hide-if-no-js'] .= " onclick=\"set_book_download_link_value('{$myfieldvalue}')\" >";
     $actions['inline hide-if-no-js'] .= __( 'Quick Edit' );
     $actions['inline hide-if-no-js'] .= '</a>';
     return $actions;
