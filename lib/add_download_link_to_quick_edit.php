@@ -30,7 +30,7 @@ function kn_add_quick_edit($column_name, $post_type) {
         <div class="inline-edit-col">
             <span class="title">Book Download Link</span>
             <input id="book_download_link_noncename" type="hidden" name="book_download_link_noncename" value="" />
-            <input id="book_download_link" type="text" name="book_download_link" value="" style="width: 100%" />
+            <textarea id="book_download_link" type="text" name="book_download_link" value="" style="width: 100%"></textarea>
         </div>
     </fieldset>
      <?php
