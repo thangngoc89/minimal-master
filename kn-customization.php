@@ -62,10 +62,18 @@ function sk_display_custom_fields() {
 				echo '<p><a href="' . $book_purchase_link . '" target="_blank" rel="nofollow">Buy this book</a></p>';
 			}
 
-      if ( $book_download_link ) {
-				echo '<a href="http://ouo.io/s/0G4vYlK2?s=' . $book_download_link . '" class="button" target="_blank" rel="nofollow">Download</a>';
-			}
-			echo '<a href="#" class="button dropdown-toggle"></a>';
+			echo <<<EOD
+				<div class="download">
+					<a href="http://ouo.io/s/0G4vYlK2?s=' . $book_download_link . '" class="button main-download" target="_blank" rel="nofollow">Download</a>
+					<a href="#" class="button dropdown-toggle"></a>
+
+					<ul class="dropdown-menu">
+						<li class="menu-item">
+						<a href="http://khoanguyen.dev/category/dentistry/general-dentistry/"><span>General Dentistry</span></a>
+						</li>
+					</ul>
+				</div>
+EOD;
 
       //TODO: Add admin options for this
       echo '<p><a href="/huong-dan-tai-sach">(how to download this book)</a></p>';

@@ -209,17 +209,29 @@ li.toggle-search.active a:before{
 }
 
 /* Dropdown button */
+div.download {
+  display:block;
+  position: relative;
+}
+.button.main-download {
+  display: block;
+  float: left;
+}
 .button.dropdown-toggle {
-  display: inline-block;
+  display: block;
+  float: right;
   font-size: 18px;
   font-weight: 300;
   margin: 0 auto;
   text-align: center;
   padding: 16px 24px;
   background-color: #f7595a;
-  border-left: 1px solid #CB2127 ;
+  border-left: 1px solid #de494a ;
   outline: none;
   width: 64px;
+}
+.button.dropdown-toggle:hover {
+  background-color: #de494a;
 }
 
 .button.dropdown-toggle:before,
@@ -229,4 +241,12 @@ li.toggle-search.active a:before{
 }
 .button.dropdown-toggle:before {
   content: "\f347";
+}
+
+.dropdown-menu {
+  background-color: #f7595a;
+  border-bottom: 1px solid #fff;
+  padding: 16px 20px;
+  margin: 0;
+  display: block;
 }
