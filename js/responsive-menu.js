@@ -16,4 +16,13 @@
 
 	});
 
+	$( '.dropdown-toggle' ).on( 'click', function(e) {
+		e.preventDefault();
+		var $this = $( this );
+
+		$this.toggleClass( 'activated' );
+		$this.parent().next( '.dropdown-menu' ).slideToggle('fast');
+
+	});
+
 })( this, jQuery );

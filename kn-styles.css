@@ -207,3 +207,58 @@ li.toggle-search.active a:before{
   -moz-box-shadow: 0;
   box-shadow: 0;
 }
+
+/* Dropdown button */
+div.download {
+  display:block;
+  position: relative;
+  overflow: hidden
+}
+.button.main-button {
+  display: block;
+  float: left;
+  width:70%;
+  text-align: center;
+}
+.button.main-button.no-dropdown-toggle {
+  width:  100%;
+}
+.button.dropdown-toggle {
+  display: block;
+  float: right;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0 auto;
+  text-align: center;
+  padding: 16px 24px;
+  background-color: #f7595a;
+  border-left: 1px solid #de494a ;
+  outline: none;
+  width: 30%;
+}
+.button.dropdown-toggle:hover {
+  background-color: #de494a;
+}
+
+.button.dropdown-toggle:before,
+.button.dropdown-toggle.activated:before {
+  -webkit-font-smoothing: antialiased;
+  font: normal 16px/1 'dashicons';
+}
+.button.dropdown-toggle:before {
+  content: "\f347";
+}
+.button.dropdown-toggle.activated:before {
+  content: "\f343";
+}
+
+.dropdown-menu {
+  display:none;
+}
+.dropdown-menu a {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 16px 24px;
+  margin: 0;
+  display: block;
+}

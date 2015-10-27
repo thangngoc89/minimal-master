@@ -6,6 +6,8 @@ include_once( get_template_directory() . '/lib/init.php' );
 include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 include_once( get_stylesheet_directory() . '/kn-customization.php' );
 include_once( get_stylesheet_directory() . '/lib/add_download_link_to_quick_edit.php' );
+include_once( get_stylesheet_directory() . '/lib/generate_download_area.php' );
+include_once( get_stylesheet_directory() . '/lib/debug_function.php' );
 
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Minimal Theme' );
