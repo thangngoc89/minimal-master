@@ -63,8 +63,9 @@ function sk_display_custom_fields() {
 			}
 
       if ( $book_download_link ) {
-				echo '<a href="' . $book_download_link . '" class="button" target="_blank" rel="nofollow">Download this book</a>';
+				echo '<a href="http://ouo.io/s/0G4vYlK2?s=' . $book_download_link . '" class="button" target="_blank" rel="nofollow">Download</a>';
 			}
+			echo '<a href="#" class="button dropdown-toggle"></a>';
 
       //TODO: Add admin options for this
       echo '<p><a href="/huong-dan-tai-sach">(how to download this book)</a></p>';
@@ -145,4 +146,9 @@ function parallax_toggle_search(){
   echo get_search_form();
 
   echo '</div>' . "\n";
+}
+//* Rename search form text
+add_filter( 'genesis_search_text', 'sp_search_text' );
+function sp_search_text( $text ) {
+	return esc_attr( 'Search books...' );
 }
