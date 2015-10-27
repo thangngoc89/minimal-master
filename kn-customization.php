@@ -65,7 +65,7 @@ function sk_display_custom_fields() {
 			echo <<<EOD
 				<div class="download">
 					<a href="http://ouo.io/s/0G4vYlK2?s=' . $book_download_link . '" class="button main-button" target="_blank" rel="nofollow">Download</a>
-					<a href="#" class="button dropdown-toggle"></a>
+					<a href="#" class="button dropdown-toggle" title="Mirror download link"></a>
 					</div>
 
 					<div class="dropdown-menu">

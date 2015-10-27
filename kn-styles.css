@@ -248,10 +248,13 @@ div.download {
   content: "\f343";
 }
 
+.dropdown-menu {
+  display:none;
+}
 .dropdown-menu a {
   background-color: #fff;
   border-bottom: 1px solid #ddd;
   padding: 16px 24px;
   margin: 0;
-  display: block
+  display: block;
 }
