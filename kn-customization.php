@@ -62,18 +62,30 @@ function sk_display_custom_fields() {
 				echo '<p><a href="' . $book_purchase_link . '" target="_blank" rel="nofollow">Buy this book</a></p>';
 			}
 
-			echo <<<EOD
-				<div class="download">
-					<a href="http://ouo.io/s/0G4vYlK2?s=' . $book_download_link . '" class="button main-button" target="_blank" rel="nofollow">Download</a>
-					<a href="#" class="button dropdown-toggle" title="Mirror download link"></a>
-					</div>
+			$exploded_book_download_link = explode(PHP_EOL, $book_download_link);
 
-					<div class="dropdown-menu">
-						<a href="http://khoanguyen.dev/category/dentistry/general-dentistry/">General Dentistry</a>
-						<a href="http://khoanguyen.dev/category/dentistry/general-dentistry/">General Dentistry</a>
-						<a href="http://khoanguyen.dev/category/dentistry/general-dentistry/">General Dentistry</a>
-					</div>
+			if (count($exploded_book_download_link) > 1) {
+
+				foreach ($exploded_book_download_link as $i => $single_link) {
+					if ($i == 0) {
+						echo <<<EOD
+							<div class="download">
+								<a href="http://ouo.io/s/0G4vYlK2?s=$single_link" class="button main-button" target="_blank" rel="nofollow">Download</a>
+								<a href="#" class="button dropdown-toggle" title="Mirror download link"></a>
+							</div>
+							<div class="dropdown-menu">
 EOD;
+
+					} elseif ($single_link != '') {
+						echo '<a href="http://ouo.io/s/0G4vYlK2?s=' . $single_link . '" target="_blank" rel="nofollow">Mirror ' . $i . '</a>';
+					}
+				}
+				echo '</div>';
+			} else {
+				// If this link has no mirror
+				echo '<div class="download"><a href="http://ouo.io/s/0G4vYlK2?s=' . $book_download_link . '" class="button main-button no-dropdown-toggle" target="_blank" rel="nofollow">Download</a></div>';
+			}
+
 
       //TODO: Add admin options for this
       echo '<p><a href="/huong-dan-tai-sach">(how to download this book)</a></p>';

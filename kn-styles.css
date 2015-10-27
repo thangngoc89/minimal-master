@@ -218,6 +218,10 @@ div.download {
   display: block;
   float: left;
   width:70%;
+  text-align: center;
+}
+.button.main-button.no-dropdown-toggle {
+  width:  100%;
 }
 .button.dropdown-toggle {
   display: block;
