@@ -64,15 +64,15 @@ function sk_display_custom_fields() {
 
 			echo <<<EOD
 				<div class="download">
-					<a href="http://ouo.io/s/0G4vYlK2?s=' . $book_download_link . '" class="button main-download" target="_blank" rel="nofollow">Download</a>
+					<a href="http://ouo.io/s/0G4vYlK2?s=' . $book_download_link . '" class="button main-button" target="_blank" rel="nofollow">Download</a>
 					<a href="#" class="button dropdown-toggle"></a>
+					</div>
 
-					<ul class="dropdown-menu">
-						<li class="menu-item">
-						<a href="http://khoanguyen.dev/category/dentistry/general-dentistry/"><span>General Dentistry</span></a>
-						</li>
-					</ul>
-				</div>
+					<div class="dropdown-menu">
+						<a href="http://khoanguyen.dev/category/dentistry/general-dentistry/">General Dentistry</a>
+						<a href="http://khoanguyen.dev/category/dentistry/general-dentistry/">General Dentistry</a>
+						<a href="http://khoanguyen.dev/category/dentistry/general-dentistry/">General Dentistry</a>
+					</div>
 EOD;
 
       //TODO: Add admin options for this

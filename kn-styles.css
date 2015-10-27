@@ -212,10 +212,12 @@ li.toggle-search.active a:before{
 div.download {
   display:block;
   position: relative;
+  overflow: hidden
 }
-.button.main-download {
+.button.main-button {
   display: block;
   float: left;
+  width:70%;
 }
 .button.dropdown-toggle {
   display: block;
@@ -228,7 +230,7 @@ div.download {
   background-color: #f7595a;
   border-left: 1px solid #de494a ;
   outline: none;
-  width: 64px;
+  width: 30%;
 }
 .button.dropdown-toggle:hover {
   background-color: #de494a;
@@ -242,11 +244,14 @@ div.download {
 .button.dropdown-toggle:before {
   content: "\f347";
 }
+.button.dropdown-toggle.activated:before {
+  content: "\f343";
+}
 
-.dropdown-menu {
-  background-color: #f7595a;
-  border-bottom: 1px solid #fff;
-  padding: 16px 20px;
+.dropdown-menu a {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 16px 24px;
   margin: 0;
-  display: block;
+  display: block
 }
