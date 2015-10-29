@@ -80,6 +80,6 @@ function sk_do_sidebar() {
 
 //* To remove empty markup, '<p class="entry-meta"></p>' for entries that have not been assigned to any `Genre`
 // remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
-add_action( 'genesis_entry_footer', 'sk_custom_post_meta' );
+// add_action( 'genesis_entry_footer', 'sk_custom_post_meta' );
 
 genesis();

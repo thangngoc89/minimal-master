@@ -84,18 +84,6 @@ function custom_post_meta( $post_meta ) {
 }
 
 /**
- * [All Book pages] Display Post meta only if the entry has been assigned to any Genre term
- * Removes empty markup, '<p class="entry-meta"></p>' for entries that have not been assigned to any Genre
- */
-function sk_custom_post_meta() {
-
-	if ( has_term( '', 'genre' ) ) {
-		genesis_post_meta();
-	}
-
-}
-
-/**
  * [WordPress] Template Redirect
  * Use archive-books.php for Genre taxonomy archives.
  */

@@ -58,7 +58,7 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'nav',
 	'site-inner',
 	'footer-widgets',
-	'footer'
+	'footer',
 ) );
 
 //* Add viewport meta tag for mobile browsers
@@ -225,7 +225,7 @@ function minimal_top_widget() {
 add_action( 'genesis_after_entry', 'minimal_after_entry', 5 );
 function minimal_after_entry() {
 
-	if ( is_singular( 'post' ) )
+	if ( is_singular() )
 		genesis_widget_area( 'after-entry-widget', array(
 			'before' => '<div class="after-entry-widget widget-area">',
 			'after'  => '</div>',
