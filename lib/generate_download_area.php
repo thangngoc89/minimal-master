@@ -34,13 +34,7 @@ function generate_download_area($book_download_link) {
 
 // Prefix link with shortener url
 function generate_link($link, $url_prefix = null) {
-  //TODO: Make this configurable via admin interface
-  if ($url_prefix == null) {
-    $url_prefix = genesis_get_option('url_prefix');
-  }
-
-  // Encode to make sure it works for url with hash
-  return $url_prefix . urlencode($link);
+  return get_shorten_url($link);
 }
 
 function add_gg_tracking($link) {
