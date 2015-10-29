@@ -39,7 +39,8 @@ function generate_link($link, $url_prefix = null) {
     $url_prefix = genesis_get_option('url_prefix');
   }
 
-  return $url_prefix.$link;
+  // Encode to make sure it works for url with hash
+  return $url_prefix . urlencode($link);
 }
 
 function add_gg_tracking($link) {
