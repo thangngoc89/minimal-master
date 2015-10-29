@@ -20,12 +20,14 @@ function kn_prefix_post_urls($content) {
 		}
 	}
 
+	$content = preg_replace("/<a(.*?)>/", "<a$1 target=\"_blank\">", $content);
+
 	return $content;
 }
 
 function get_shorten_url($url, $real_shorten = true) {
 	$prefix = genesis_get_option('url_prefix');
-	
+
 	$baked_url = $prefix.urlencode($url);
 
 	if (! $real_shorten) {
