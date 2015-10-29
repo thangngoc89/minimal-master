@@ -35,12 +35,12 @@ function get_shorten_url($url, $real_shorten = true) {
 	}
 
 	$key = md5($baked_url);
-	if ($data = get_transient($key)) {
+	if ( $data = get_transient( $key ) ) {
 		return $data;
 	}
 
 	$data = file_get_contents($baked_url);
-	set_transient( $key, $data, 100*YEAR_IN_SECONDS );
+	set_transient( $key, $data, 1*YEAR_IN_SECONDS );
 	return $data;
 }
 
